@@ -1,0 +1,25 @@
+<!--
+This query looks for nodes, ways and relations 
+with the given user name.
+Choose your region and hit the Run button above!
+-->
+{{name=???}}
+<osm-script output="json">
+  <union>
+    <query type="node">
+      <user name="{{name}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="way">
+      <user name="{{name}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="relation">
+      <user name="{{name}}"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <print mode="body"/>
+  <recurse type="down"/>
+  <print mode="skeleton"/>
+</osm-script>
