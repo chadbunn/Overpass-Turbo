@@ -1,0 +1,24 @@
+<!--
+This query looks for nodes, ways and relations 
+last edited by OSM user Station 42.
+Choose your region and hit the Run button above!
+-->
+<osm-script output="json">
+  <union>
+    <query type="node">
+      <user name="Station 42"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="way">
+      <user name="Station 42"/>
+      <bbox-query {{bbox}}/>
+    </query>
+    <query type="relation">
+      <user name="Station 42"/>
+      <bbox-query {{bbox}}/>
+    </query>
+  </union>
+  <print mode="body"/>
+  <recurse type="down"/>
+  <print mode="skeleton"/>
+</osm-script>
